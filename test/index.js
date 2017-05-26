@@ -1,7 +1,10 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 'use strict';
 
-require('./parse');
+require('qs/test/parse');
 
-require('./stringify');
+require('qs/test/stringify');
 
-require('./utils');
+require('qs/test/utils');
+
+return module.exports;});

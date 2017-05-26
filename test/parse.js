@@ -1,7 +1,8 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 'use strict';
 
 var test = require('tape');
-var qs = require('../');
+var qs = require('qs/');
 var iconv = require('iconv-lite');
 
 test('parse()', function (t) {
@@ -513,7 +514,9 @@ test('parse()', function (t) {
     t.test('throws error with wrong decoder', function (st) {
         st.throws(function () {
             qs.parse({}, { decoder: 'string' });
-        }, new TypeError('Decoder has to be a function.'));
+        }, 'Decoder has to be a function.');
         st.end();
     });
 });
+
+return module.exports;});

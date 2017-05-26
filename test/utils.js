@@ -1,7 +1,8 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 'use strict';
 
 var test = require('tape');
-var utils = require('../lib/utils');
+var utils = require('qs/lib/utils');
 
 test('merge()', function (t) {
     t.deepEqual(utils.merge({ a: 'b' }, { a: 'c' }), { a: ['b', 'c'] }, 'merges two objects with the same key');
@@ -20,3 +21,5 @@ test('merge()', function (t) {
 
     t.end();
 });
+
+return module.exports;});

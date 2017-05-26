@@ -1,7 +1,8 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 'use strict';
 
 var test = require('tape');
-var qs = require('../');
+var qs = require('qs/');
 var iconv = require('iconv-lite');
 
 test('stringify()', function (t) {
@@ -455,7 +456,7 @@ test('stringify()', function (t) {
     t.test('throws error with wrong encoder', function (st) {
         st.throws(function () {
             qs.stringify({}, { encoder: 'string' });
-        }, new TypeError('Encoder has to be a function.'));
+        }, 'Encoder has to be a function.');
         st.end();
     });
 
@@ -529,7 +530,7 @@ test('stringify()', function (t) {
                     function () {
                         qs.stringify({ a: 'b c' }, { format: format });
                     },
-                    new TypeError('Unknown format option provided.')
+                    'Unknown format option provided.'
                 );
             }
         );
@@ -565,3 +566,5 @@ test('stringify()', function (t) {
     });
 
 });
+
+return module.exports;});
