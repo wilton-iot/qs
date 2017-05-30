@@ -1,7 +1,7 @@
 define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 'use strict';
 
-var test = require('tape');
+var test = require('tape-compat');
 var utils = require('qs/lib/utils');
 
 test('merge()', function (t) {
