@@ -46,5 +46,13 @@
     "coverage": "covert test",
     "dist": "mkdirp dist && browserify --standalone Qs lib/index.js > dist/qs.js"
   },
-  "license": "BSD-3-Clause"
+  "license": "BSD-3-Clause",
+  "wilton": {
+    "excludes": [
+      "dist",
+      "test",
+      "bower.json",
+      "component.json"
+    ]
+  }
 }
