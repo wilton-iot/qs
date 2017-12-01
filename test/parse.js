@@ -1,8 +1,8 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 'use strict';
 
 var test = require('tape-compat');
-var qs = require('qs/');
+var qs = require('qs');
 var iconv = require('iconv-lite');
 
 test('parse()', function (t) {
@@ -519,4 +519,4 @@ test('parse()', function (t) {
     });
 });
 
-return module.exports;});
+require = requireOrig;});
