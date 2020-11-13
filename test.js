@@ -15,11 +15,19 @@
  */
 
 define([
+    "is-in-browser",
     "./test/parse",
     "./test/utils"
-], function() {
+], function(isInBrowser) {
     "use strict";
 
-    print("test: qs");
-
+    if (isInBrowser || "function" === typeof(WILTON_requiresync) &&
+            "rhino" !== WILTON_requiresync("wilton/misc").wiltonConfig().defaultScriptEngine) {
+        require([
+            "qs/test/stringify"
+        ], function() {
+        });
+    } else {
+        print("test: qs");
+    }
 });
