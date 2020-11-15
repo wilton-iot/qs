@@ -22,7 +22,8 @@ define([
     "use strict";
 
     if (isInBrowser || "function" === typeof(WILTON_requiresync) &&
-            "rhino" !== WILTON_requiresync("wilton/misc").wiltonConfig().defaultScriptEngine) {
+            "rhino" !== WILTON_requiresync("wilton/misc").wiltonConfig().defaultScriptEngine &&
+            "nashorn" !== WILTON_requiresync("wilton/misc").wiltonConfig().defaultScriptEngine) {
         require([
             "qs/test/stringify"
         ], function() {
